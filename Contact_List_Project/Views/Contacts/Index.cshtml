@@ -1,0 +1,30 @@
+﻿@model List<Contact_List_Project.Models.Domain.Contact>
+@{
+}
+<h1> Contacts List   </h1>
+
+<table class="table">
+    <thead> 
+        <tr>    
+            <th>Name</th>
+            <th>Number</th>
+            <th>Email</th>
+            <th>Team</th>
+            <th>Date of Birth</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model){
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.Number</td>
+                <td>@contact.Email</td>
+                <td>@contact.Team</td>
+                <td>@contact.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td><a href="Contacts/View/@contact.Id">Edit</a></td>
+                <td><a href="Contacts/View/@contact.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
